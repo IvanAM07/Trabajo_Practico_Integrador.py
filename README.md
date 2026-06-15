@@ -85,9 +85,16 @@ El dataset incluye 50 países de los continentes: América, Europa, Asia, Africa
 
 ---
 
+## Videos demostrativos
+
+Ivan Mendoza | [Ver video](https://www.youtube.com/watch?v=-blHZxb0U5w) |
+Adrian Candas |[Ver video](https://drive.google.com/file/d/11R4x_JApaEUQnRQurBAL3bUZzk7fCBHI/view) |
+
+---
+
 ## Integrantes
 
 | Nombre | Rol |
 |--------|-----|
 | Ivan Mendoza | Filtros, ordenamientos, estadísticas, integración general |
-| Adrian Candas | Alta de país, actualización, búsqueda por nombre , integracion general|
+| Adrian Candas| Alta de país, actualización, búsqueda por nombre, integración general |
