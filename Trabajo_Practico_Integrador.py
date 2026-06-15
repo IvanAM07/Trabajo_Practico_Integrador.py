@@ -1,4 +1,4 @@
-ARCHIVO_CSV = "/Users/Ivan/curso/paises.csv"
+ARCHIVO_CSV = "paises.csv"
 
 # ==================================
 # FUNCIONES AUXILIARES PARTE 1
@@ -33,6 +33,7 @@ def pedir_entero(mensaje):
             except ValueError:
                 print("Error: debe ingresar un número entero.")
 
+# Muestra los datos de un país formateados.
 def mostrar_pais(pais):
     print("-" * 30)
     print(f"  Nombre:      {pais['nombre']}")
@@ -40,6 +41,13 @@ def mostrar_pais(pais):
     print(f"  Superficie:  {pais['superficie']:,} km²")
     print(f"  Continente:  {pais['continente']}")
     print("-" * 30)
+
+# Guarda la lista de países en el archivo CSV.
+def guardar_paises(paises):
+    with open(ARCHIVO_CSV, "w", encoding="utf-8") as archivo:
+        archivo.write("nombre,poblacion,superficie,continente\n")
+        for pais in paises:
+            archivo.write(f"{pais['nombre']},{pais['poblacion']},{pais['superficie']},{pais['continente']}\n")
 
 
 # ==================================
@@ -77,24 +85,18 @@ def cargar_paises():
 
     return paises
 
+
+# ==================================
+# OPCIÓN 1 - MOSTRAR PAÍSES
+# ==================================
+
 def mostrar_paises(paises):
     for pais in paises:
         mostrar_pais(pais)
 
 
 # ==================================
-# GUARDAR EN CSV
-# ==================================
-
-def guardar_paises(paises):
-    with open(ARCHIVO_CSV, "w", encoding="utf-8") as archivo:
-        archivo.write("nombre,poblacion,superficie,continente\n")
-        for pais in paises:
-            archivo.write(f"{pais['nombre']},{pais['poblacion']},{pais['superficie']},{pais['continente']}\n")
-
-
-# ==================================
-# PUNTO 1 - AGREGAR PAÍS
+# OPCIÓN 2 - AGREGAR PAÍS
 # ==================================
 
 def agregar_pais(paises):
@@ -123,8 +125,9 @@ def agregar_pais(paises):
     print("\nPaís agregado correctamente.")
 
 
+
 # ==================================
-# PUNTO 2 - ACTUALIZAR PAÍS
+# OPCIÓN 3 - ACTUALIZAR PAÍS
 # ==================================
 
 def actualizar_pais(paises):
@@ -160,8 +163,9 @@ def actualizar_pais(paises):
         print("\nNo se encontró un país con ese nombre.")
 
 
+
 # ==================================
-# PUNTO 3 - BUSCAR PAÍS
+# OPCIÓN 4 - BUSCAR POR NOMBRE
 # ==================================
 
 def buscar_pais(paises):
@@ -182,7 +186,7 @@ def buscar_pais(paises):
 
 
 # ==================================
-# FILTROS
+# OPCIONES 5, 6 Y 7 - FILTROS
 # ==================================
 
 def filtrar_continente(paises):
@@ -255,7 +259,7 @@ def filtrar_superficie(paises):
 
 
 # ==================================
-# ORDENAMIENTOS
+# OPCIONES 8, 9, 10 Y 11 - ORDENAMIENTOS
 # ==================================
 
 def ordenar_nombre(paises):
@@ -322,7 +326,7 @@ def ordenar_superficie_des(paises):
 
 
 # ==================================
-# ESTADÍSTICAS
+# OPCIÓN 12 - ESTADÍSTICAS
 # ==================================
 
 def pais_menor_poblacion(paises):
@@ -342,7 +346,6 @@ def pais_mayor_poblacion(paises):
     mostrar_pais(mayor)
 
 def promedio_poblacion(paises):
-
     suma = 0
 
     for pais in paises:
@@ -372,7 +375,7 @@ def cantidad_paises_por_continente(paises):
 
     for pais in paises:
 
-        if pais["continente"] == "América":
+        if pais["continente"] == "America":
             america += 1
 
         elif pais["continente"] == "Europa":
@@ -381,10 +384,10 @@ def cantidad_paises_por_continente(paises):
         elif pais["continente"] == "Asia":
             asia += 1
 
-        elif pais["continente"] == "África":
+        elif pais["continente"] == "Africa":
             africa += 1
 
-        elif pais["continente"] == "Oceanía":
+        elif pais["continente"] == "Oceania":
             oceania += 1
 
     print("Cantidad de países por continente:")
