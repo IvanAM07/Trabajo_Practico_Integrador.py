@@ -70,7 +70,7 @@ Brasil,213993437,8515767,America
 ...
 ```
 
-El dataset incluye 50 países de los continentes: América, Europa, Asia, Africa y Oceania.
+El dataset incluye 48 países de los continentes: América, Europa, Asia, Africa y Oceania.
 
 ---
 
